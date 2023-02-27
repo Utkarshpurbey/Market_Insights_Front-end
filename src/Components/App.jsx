@@ -1,14 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom"
-import State from "./State";
-import District from './District'
-
+import Home from "./Home"
 const App = () =>{
 
     return(
         <Routes>
-            <Route path='/:StateName' element ={ <State /> } />
-            <Route path ='/:StateName/:District' element = {<District />}></Route>
+            <Route path ='/' element={<Home/>} />
         </Routes>
     );
 
