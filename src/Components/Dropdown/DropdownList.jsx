@@ -16,19 +16,20 @@ const DropdownList = ({content,dropdownToParent,header}) => {
   };
 
   return (
-    <div>
+    <div className="dropdownList">
       <Box sx={{ minWidth: 120 }}>
         <FormControl fullWidth>
-          <InputLabel id="inputId">Select {header}</InputLabel>
+          <InputLabel style={{color: "gray"}} id="inputId">Select {header}</InputLabel>
           <Select
             id="demo-simple-select"
             labelId="inputId"
             value={data}
             label= {`Select ${header}`}
             onChange={handleChange}
+            style={{color: "gray"}}
           >
             {content?.map((name) => {
-              return <MenuItem key ={name} value={name}>{name}</MenuItem>;
+              return <MenuItem style={{color: "gray"}} key ={name} value={name}>{name}</MenuItem>;
             })}
           </Select>
         </FormControl>

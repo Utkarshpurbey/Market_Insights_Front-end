@@ -2,8 +2,7 @@
 // import { AppBar, Button, TextField, Toolbar, Typography } from "@mui/material";
 // import Graph from "./Graph";
 // import axios from "axios";
-// import DropdownList from "../Dropdown/DropdownList"
-// import "../index.css"
+// import Chart from "../chart/Chart";
 // const DetailForm = () => {
 //   const [inputField, setInputField] = useState({
 //     state: "",
@@ -109,7 +108,7 @@
 //         {" "}
 //         Submit
 //       </Button>
-//       {submitFlag && <Graph data={data}/>}
+//       {submitFlag && <Chart data={data} graphName ="Commodity Chart" aspect={3/1}/>}
 //     </div>
 //   );
 // };

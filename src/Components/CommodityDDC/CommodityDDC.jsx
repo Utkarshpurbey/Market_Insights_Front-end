@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import BuildGraph from "../Graph/BuildGraph";
+import Chart from "../chart/Chart";
 import axios from "axios";
 import { Button } from "@mui/material";
 import DropdownSmart from "../Dropdown/DropdownSmart";
-const Home = () => {
+import Featured from "../featured/Featured";
+const CommodityDDC = () => {
   const [stateName, setStateName] = useState("");
   const [districtName, setDistrictName] = useState("");
   const [marketName, setMarketName] = useState("");
@@ -15,6 +16,11 @@ const Home = () => {
     trend:[]
   });
   const [viewGraphToggle, setViewGraphToggle] = useState(false);
+  const [insights,setInsights]=useState({
+    low:0,
+    high:0,
+    price:0
+  });
 
   useEffect(() => {
     setDistrictName("");
@@ -41,7 +47,6 @@ const Home = () => {
   useEffect(() => {
     if (varietyName !== "") {
       submitButton();
-      // console.log("var in")
     } 
     // console.log("var out")
   }, [varietyName,viewGraphToggle]);
@@ -53,8 +58,17 @@ const Home = () => {
           `${stateName}/${districtName}/${marketName}/${commodityName}/${varietyName}`
       )
       .then((res) => {
+        const priceList=res.data.modal_price;
+        let priceInd=priceList.length -1;
+        if(priceInd>=0){
+          setInsights({
+            price:priceList[priceInd].price,
+            low:priceList[priceInd].min_price,
+            high:priceList[priceInd].max_price,
+          })
+        }
         const newlist = [];
-        res.data.modal_price.map((it) => {
+        priceList.map((it) => {
           newlist.push({
             id: it.id,
             date: String(it.date).substring(0, 10),
@@ -74,7 +88,7 @@ const Home = () => {
       });
   };
   return (
-    <div className="">
+    <div className="CommodityDDC">
       <DropdownSmart
         dataType="getStates"
         name=""
@@ -123,8 +137,6 @@ const Home = () => {
       )}
       <Button
         style={{
-          background: "#333",
-          color: "#FFFFFF",
           display: "none",
         }}
         label="Submit"
@@ -135,7 +147,8 @@ const Home = () => {
       </Button>
       {(viewGraphToggle===true) ? (
         <div>
-          <BuildGraph data={data} graphName={commodityName}/>
+          <Chart data={data} graphName={commodityName} aspect={2/1}/>
+          <Featured insights={insights}/>
         </div>
       ) : (
         <div></div>
@@ -143,4 +156,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default CommodityDDC;

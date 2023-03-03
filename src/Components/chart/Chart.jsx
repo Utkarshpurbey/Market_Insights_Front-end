@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-// import { add, format, differenceInCalendarDays, isFuture } from "date-fns";
+import "./chart.scss"
 import {
   LineChart,
   Line,
@@ -15,23 +15,18 @@ import CustomTooltip from "./CustomTooltip";
 //     return moment(date).format('DD/MM/YY');
 //   };
 
-const BuildGraph = ({ data, graphName }) => {
+const Chart = ({ data, graphName ,aspect}) => {
   useEffect(() => {}, [data, graphName]);
 
   return (
-    <div>
-      <p>{data.commodityName}</p>
-      <ResponsiveContainer width="90%" height={500}>
+    <div className='chart'>
+      <div className="title">{data.commodityName}</div>
+      <ResponsiveContainer width="100%" aspect={aspect}>
         <LineChart
-          width={500}
+          width={730}
           height={250}
           data={data.trend}
-          margin={{
-            top: 10,
-            right: 0,
-            bottom: 10,
-            left: 0,
-          }}
+          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
         >
           <XAxis dataKey="date" />
           <YAxis />
@@ -49,4 +44,4 @@ const BuildGraph = ({ data, graphName }) => {
   );
 };
 
-export default BuildGraph;
+export default Chart;
