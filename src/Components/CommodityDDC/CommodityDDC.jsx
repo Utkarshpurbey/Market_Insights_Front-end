@@ -4,6 +4,8 @@ import axios from "axios";
 import { Button } from "@mui/material";
 import DropdownSmart from "../Dropdown/DropdownSmart";
 import Featured from "../featured/Featured";
+import "./CommodityDDC.scss"
+
 const CommodityDDC = () => {
   const [stateName, setStateName] = useState("");
   const [districtName, setDistrictName] = useState("");
@@ -89,7 +91,9 @@ const CommodityDDC = () => {
   };
   return (
     <div className="CommodityDDC">
-      <DropdownSmart
+
+      <h1>Select the relevent options for geting the insights of a commodity.</h1>
+      <DropdownSmart 
         dataType="getStates"
         name=""
         DropdownSmartToParent={setStateName}
@@ -113,7 +117,7 @@ const CommodityDDC = () => {
           header="Market"
         />
       ) : (
-        <div></div>
+        <div className="drop"></div>
       )}
       {marketName !== "" ? (
         <DropdownSmart
@@ -123,15 +127,17 @@ const CommodityDDC = () => {
           header="Commodity"
         />
       ) : (
-        <div></div>
+        <div className="drop"></div>
       )}
       {commodityName !== "" ? (
+        <>
         <DropdownSmart
           dataType="getVarieties"
           name={`${stateName}/${districtName}/${marketName}/${commodityName}`}
           DropdownSmartToParent={setVarietyName}
           header="Variety"
         />
+        </>
       ) : (
         <div></div>
       )}

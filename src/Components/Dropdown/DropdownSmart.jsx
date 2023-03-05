@@ -16,7 +16,7 @@ const DropdownSmart = ({dataType,name,DropdownSmartToParent,header}) => {
 
 
   return (
-    <div>
+    <div style={{marginBottom:"10px" }}>
        <DropdownList content={content} dropdownToParent={DropdownSmartToParent} header={header}></DropdownList>
     </div>
   )

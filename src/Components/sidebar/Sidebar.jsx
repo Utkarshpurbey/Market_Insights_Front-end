@@ -1,6 +1,6 @@
 import "./sidebar.scss";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import StoreIcon from "@mui/icons-material/Store";
+import HomeIcon from '@mui/icons-material/Home';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import AnalyticsIcon from "@mui/icons-material/Analytics";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -13,25 +13,28 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="center">
         <ul>
-          <p className="title">MAIN</p>
+          <p className="title">Main</p>
           <Link to="/" style={{ textDecoration: "none" }}>
             <li>
-              <DashboardIcon className="icon" />
-              <span>Dashboard</span>
+              <HomeIcon className="icon" />
+              <span>Home</span>
             </li>
           </Link>
 
           <p className="title">Insights</p>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/drop" style={{ textDecoration: "none" }}>
             <li>
-              <StoreIcon className="icon" />
-              <span>Form</span>
+              <AnalyticsIcon className="icon" />
+              <span>Insights Form</span>
             </li>
           </Link>
-          <li>
-            <AnalyticsIcon className="icon" />
-            <span>Stats</span>
-          </li>
+          <Link to="/about" style={{ textDecoration: "none" }}>
+            <li>
+              <InfoRoundedIcon className="icon" />
+              <span>About</span>
+            </li>
+          </Link>
+          
         </ul>
       </div>
 

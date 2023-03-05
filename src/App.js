@@ -9,6 +9,8 @@ import {
   Route,
 } from "react-router-dom";
 import Sidebar from "./Components/sidebar/Sidebar";
+import { Container, Row ,Col } from "reactstrap";
+import Navbar from "./Components/navbar/Navbar";
 
 
 function App() {
@@ -17,13 +19,23 @@ function App() {
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/drop" element={<CommodityDDC />} />
-          <Route path="/sidebar" element={<Sidebar />} />
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Container>
+            <Navbar />
+          <Row>
+            <Col md = {2}>
+              <Sidebar />
+            </Col>
+            <Col md = {10}>
+              <Routes >
+                <Route path = "/" element = {<Home />} />
+                <Route path = "/drop" element = {<CommodityDDC />} />
+              </Routes>
+            </Col>
+          </Row>
+      </Container>
+    </BrowserRouter>
+     
     </div>
   );
 }

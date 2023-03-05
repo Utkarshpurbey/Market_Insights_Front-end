@@ -6,16 +6,8 @@ import "./home.scss";
 const Home = () => {
   return (
     <div className="home">
-      <div>
-        <NavBar />
+       <h1>This is home page.</h1>
       </div>
-      <div className="homeContainer">
-        <SideBar />
-        <div className="dropdown">
-          <CommodityDDC />
-        </div>
-      </div>
-    </div>
   );
 };
 
