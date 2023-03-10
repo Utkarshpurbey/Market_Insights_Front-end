@@ -70,15 +70,25 @@ const CommodityDDC = () => {
           })
         }
         const newlist = [];
+        // priceList.map((it) => {
+        //   newlist.push({
+        //     id: it.id,
+        //     date: String(it.date).substring(0, 10),
+        //     price: it.price,
+        //     max_price: it.max_price,
+        //     min_price: it.min_price,
+        //   });
+        // });
         priceList.map((it) => {
           newlist.push({
             id: it.id,
-            date: String(it.date).substring(0, 10),
+            date: (it.id).substr((it.id).length-10,10),
             price: it.price,
             max_price: it.max_price,
             min_price: it.min_price,
           });
         });
+        console.log(newlist)
         setData({
           commodityName:`Commodity : ${res.data.commodity} Variety : ${res.data.variety}`,
           trend:newlist
