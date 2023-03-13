@@ -21,12 +21,12 @@ function App() {
     <div className={darkMode ? "app dark" : "app"}>
     <BrowserRouter>
       <Container>
-            <Navbar />
+        <Navbar />
           <Row>
-            <Col md = {2}>
+            <Col xs = {4} md = {2}>
               <Sidebar />
             </Col>
-            <Col md = {10}>
+            <Col xs = {8} md = {10}>
               <Routes >
                 <Route path = "/" element = {<Home />} />
                 <Route path = "/drop" element = {<CommodityDDC />} />
