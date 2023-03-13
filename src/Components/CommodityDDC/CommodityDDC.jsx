@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 import DropdownSmart from "../Dropdown/DropdownSmart";
 import Featured from "../featured/Featured";
 import "./CommodityDDC.scss"
+import Insights from "../Insights/Insights"
 
 const CommodityDDC = () => {
   const [stateName, setStateName] = useState("");
@@ -165,10 +166,15 @@ const CommodityDDC = () => {
         <div>
           <Chart data={data} graphName={commodityName} aspect={2/1}/>
           <Featured insights={insights}/>
+          <Insights id={`${stateName}${districtName}${marketName}${commodityName}${varietyName}` } days={3}/>
+          <Insights id={`${stateName}${districtName}${marketName}${commodityName}${varietyName}` } days={5}/>
+          <Insights id={`${stateName}${districtName}${marketName}${commodityName}${varietyName}` } days={7}/>
+          <Insights id={`${stateName}${districtName}${marketName}${commodityName}${varietyName}` } days={30}/> 
         </div>
       ) : (
         <div></div>
       )}
+      
     </div>
   );
 };

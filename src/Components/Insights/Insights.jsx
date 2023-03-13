@@ -5,16 +5,16 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import "./insights.scss"
 
-const Insights = () =>{
-    const [id,setId] = useState("KeralaKollamAnchalCapsicumCapsicum");
+const Insights = ({id,days}) =>{
     const[data,SetData] = useState([]);
     const [curprice,setCurrprice] = useState(0);
     const [average ,setAverage] = useState();
 
-    const max_min = (id,days)=>{
+    const max_min = (id)=>{
         axios.get(`http://localhost:8080/insights/max_min/${id}/${days}`).
         then((res)=>{
             SetData(res.data);
+            console.log(res.data)
         }).catch((err)=>{
             console.log(`Error - ${err}`)
         })
@@ -29,7 +29,7 @@ const Insights = () =>{
         })
     }
 
-    const average_price = (id,days) =>{
+    const average_price = (id) =>{
         axios.get(`http://localhost:8080/insights/average/${id}/${days}`).then((res)=>{
         setAverage(res.data);
         }).catch((err)=>{
@@ -57,10 +57,10 @@ const Insights = () =>{
     }
 
     useEffect(()=>{
-        max_min(id,5)
+        max_min(id)
         current_price(id)
-        average_price(id,5);
-    },[]);
+        average_price(id);
+    },[id]);
 
     var max_val = data[0];
     var min_val = data[1];
@@ -70,7 +70,7 @@ const Insights = () =>{
     return (
         <div className="insight-card">
             {percent_h1()}
-            <p>Over the Past 3 days </p>
+            <p>Over the Past {days} days </p>
             {/* <p>Max val = {max_val} Min val = {min_val} Current Price = {curprice}  average = {average}  Percent ={percent} prog_val = {prog_val} </p> */}
             <p className="min">{min_val}</p>
             <p className="max"> {max_val} </p>
