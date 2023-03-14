@@ -105,7 +105,7 @@ const CommodityDDC = () => {
   return (
     <div className="CommodityDDC">
 
-      <h1>Select the relevent options for geting the insights of a commodity.</h1>
+      <h1>Choose the appropriate options to get insight of a commodity.</h1>
       <DropdownSmart 
         dataType="getStates"
         name=""
