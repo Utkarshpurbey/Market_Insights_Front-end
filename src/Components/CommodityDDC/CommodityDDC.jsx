@@ -24,6 +24,8 @@ const CommodityDDC = () => {
     high:0,
     price:0
   });
+  const days_arr= [1,3,5,7,30,90,365];
+
 
   useEffect(() => {
     setDistrictName("");
@@ -166,10 +168,7 @@ const CommodityDDC = () => {
         <div>
           <Chart data={data} graphName={commodityName} aspect={2/1}/>
           <Featured insights={insights}/>
-          <Insights id={`${stateName}${districtName}${marketName}${commodityName}${varietyName}` } days={3}/>
-          <Insights id={`${stateName}${districtName}${marketName}${commodityName}${varietyName}` } days={5}/>
-          <Insights id={`${stateName}${districtName}${marketName}${commodityName}${varietyName}` } days={7}/>
-          <Insights id={`${stateName}${districtName}${marketName}${commodityName}${varietyName}` } days={30}/> 
+          <div className = "insight-body"> {days_arr.map((i)=>{return( <Insights className = "child" id={`${stateName}${districtName}${marketName}${commodityName}${varietyName}`}  days={i}/>);})}</div>
         </div>
       ) : (
         <div></div>

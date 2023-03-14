@@ -13,3 +13,26 @@
     color:antiquewhite;
     margin:100px;
 }
+.insight-body{
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+}
+.child{
+    width: 100%;
+    margin:3%;
+}
+.insight-body > .child{
+    flex: 1 0 70%;
+}
+@media (max-width:1025px) { 
+    .insight-body{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
