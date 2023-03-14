@@ -11,7 +11,7 @@ import {
 import Sidebar from "./Components/sidebar/Sidebar";
 import { Container, Row ,Col } from "reactstrap";
 import Navbar from "./Components/navbar/Navbar";
-import Insights from "./Components/Insights/Insights";
+import About from "./pages/about/About";
 
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
               <Routes >
                 <Route path = "/" element = {<Home />} />
                 <Route path = "/drop" element = {<CommodityDDC />} />
-                <Route path = "/about" element = {<Insights />} />
+                <Route path = "/about" element = {<About />} />
               </Routes>
             </Col>
           </Row>

@@ -25,7 +25,7 @@ const Sidebar = () => {
           <Link to="/drop" style={{ textDecoration: "none" }}>
             <li>
               <AnalyticsIcon className="icon" />
-              <span>Insights Form</span>
+              <span>Insights Menu</span>
             </li>
           </Link>
           <Link to="/about" style={{ textDecoration: "none" }}>
