@@ -1,4 +1,4 @@
-import "./home.scss";
+// import "./home.scss";
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Link } from "react-router-dom";

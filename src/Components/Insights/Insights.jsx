@@ -58,14 +58,14 @@ const Insights = ({id,days}) =>{
         }
     }
     const ChangesOverDay = ()=>{
-        if(days == 1){
+        if(days === 1){
             return <p>Over the Past day</p>
-        }else if(days == 7){
+        }else if(days === 7){
             return <p>Over the Week</p>
 
-        }else if(days%30 ==0 ){
+        }else if(days%30 ===0 ){
             return <p>Over the {days/30} months</p>
-        }else if(days == 365){
+        }else if(days === 365){
             return <p>Over the Year</p>
         }
         else{
@@ -81,7 +81,7 @@ const Insights = ({id,days}) =>{
 
     var max_val = data[0];
     var min_val = data[1];
-    var percent = (days == 1 ? (((curprice-lastPrice)/curprice)*100):((curprice-average)/curprice)*100);
+    var percent = (days === 1 ? (((curprice-lastPrice)/curprice)*100):((curprice-average)/curprice)*100);
     var prog_val = (curprice-min_val)/(max_val-min_val)*100;
     
     return (

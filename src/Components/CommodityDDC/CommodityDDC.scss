@@ -29,6 +29,10 @@
 .insight-body > .child{
     flex: 1 0 70%;
 }
+.heading{
+    padding:2%;
+}
+
 @media (max-width:1025px) { 
     .insight-body{
         display: flex;
