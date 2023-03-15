@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 // import { getAllMenu } from '../../API/apidata'
 import DropdownList from "./DropdownList";
 import axios from "axios";
+import { padding } from "@mui/system";
 
 const DropdownSmart = ({dataType,name,DropdownSmartToParent,header}) => {
   const [content, setContents] = useState([]);
@@ -16,7 +17,7 @@ const DropdownSmart = ({dataType,name,DropdownSmartToParent,header}) => {
 
 
   return (
-    <div style={{marginBottom:"10px" }}>
+    <div style={{ padding:"1%"}}>
        <DropdownList content={content} dropdownToParent={DropdownSmartToParent} header={header}></DropdownList>
     </div>
   )

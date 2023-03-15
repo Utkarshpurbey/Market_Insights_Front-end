@@ -1,5 +1,4 @@
 import React from "react";
-import { format } from "date-fns";
 
 const style = {
   padding: 6,
@@ -22,12 +21,12 @@ const CustomTooltip = props => {
           <em>{currData ? currData.price : " -- "}</em>
         </p>
         <p>
-          {"Max Price : "}
-          <em>{currData ? currData.max_price : " -- "}</em>
-        </p>
-        <p>
           {"Min Price : "}
           <em>{currData ? currData.min_price : " -- "}</em>
+        </p>
+        <p>
+          {"Max Price : "}
+          <em>{currData ? currData.max_price : " -- "}</em>
         </p>
       </div>
     );

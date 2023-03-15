@@ -1,7 +1,8 @@
 .insight-card{
-    width: 30%;
     text-align: center;
     position: relative;
+    margin:2%;
+    width: 30%;
   }
   .min{
     position: absolute;
@@ -21,4 +22,17 @@
     color: green;
     font-weight: 400;
   }
-  
+  .insight-text{
+    margin-top: -5%;
+  }
+
+  @media (max-width:1025px) { 
+    .insight-card{
+       width: 70%;
+    }
+    .insight-text{
+      margin-top: -15%;
+    }
+    
+}
+
