@@ -17,15 +17,15 @@ const CustomTooltip = props => {
           {/* {currData ? format(new Date(currData.date), "yyyy-MM-dd") : " -- "} */}
         </p>
         <p>
-          {"Price : "}
+          {"Price (₹/100 Kg) : "}
           <em>{currData ? currData.price : " -- "}</em>
         </p>
         <p>
-          {"Min Price : "}
+          {"Min Price (₹/) : "}
           <em>{currData ? currData.min_price : " -- "}</em>
         </p>
         <p>
-          {"Max Price : "}
+          {"Max Price (₹) : "}
           <em>{currData ? currData.max_price : " -- "}</em>
         </p>
       </div>

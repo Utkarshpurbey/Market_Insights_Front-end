@@ -9,18 +9,14 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import CustomTooltip from "./CustomTooltip";
-// import moment from "moment/moment";
-
-// const dateFormatter = date => {
-//     return moment(date).format('DD/MM/YY');
-//   };
 
 const Chart = ({ data, graphName ,aspect}) => {
   useEffect(() => {}, [data, graphName]);
 
   return (
     <div className='chart'>
-      <div className="title">{data.commodityName}</div>
+      <div className="title">{data.commodityName}  <span style={{textAlign:"justify",display :"relative",left:"0px" }}>X- axis - Date  Y axis - Price</span></div>
+      <p></p>
       <ResponsiveContainer width="100%" aspect={aspect}>
         <LineChart
           width={730}
@@ -28,7 +24,7 @@ const Chart = ({ data, graphName ,aspect}) => {
           data={data.trend}
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
         >
-          <XAxis dataKey="date" />
+          <XAxis dataKey="date"  />
           <YAxis />
           <Tooltip content={<CustomTooltip />} />
           <Line

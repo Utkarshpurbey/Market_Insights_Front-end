@@ -25,7 +25,7 @@ const Insights = ({id,days}) =>{
     const current_price = ()=>{
         axios.get(`http://localhost:8080/api/getCommodityById/${id}`).then((res)=>{
             setCurrprice(res.data.modal_price[res.data.modal_price.length-1].price) 
-            setLastPrice(res.data.modal_price[res.data.modal_price.length-2].price)
+            //setLastPrice(res.data.modal_price[res.data.modal_price.length-2].price)
         }).catch((err)=>{
             console.log(`Error - ${err}`)
         })
@@ -64,7 +64,9 @@ const Insights = ({id,days}) =>{
             return <p>Over the Week</p>
 
         }else if(days%30 ===0 ){
-            return <p>Over the {days/30} months</p>
+            if(days == 30){
+                return <p>Over the 1 month</p>
+            }else{return <p>Over the {days/30} months</p>}
         }else if(days === 365){
             return <p>Over the Year</p>
         }
@@ -88,7 +90,7 @@ const Insights = ({id,days}) =>{
         <div className="insight-card">
             {percent_h1()}
             <div className="insight-text">{ChangesOverDay()}</div>
-            {/* <p>Max val = {max_val} Min val = {min_val} Current Price = {curprice}  average = {average}  Percent ={percent} prog_val = {prog_val} </p> */}
+            {/* <p>Max val = {max_val} Min val = {min_val} Current Price = {curprice}  average = {average}  Percent ={percent} prog_val = {prog_val} lastPrice = {lastPrice}</p> */}
             <p className="min">{min_val}</p>
             <p className="max"> {max_val} </p>
             {progress_bar()}

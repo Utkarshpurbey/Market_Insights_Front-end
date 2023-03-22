@@ -1,17 +1,19 @@
-// import "./home.scss";
+import "./home.scss";
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
-
+import image1 from "../../images/image1.png"
+import image2 from "../../images/image2.png"
+import image3 from "../../images/image3.png"
 const Home = () => {
   return (
-    <div>
+    <div class ="body">
       <Carousel>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://via.placeholder.com/800x400?text=Carousel+Image+1"
+            src={image1}
             alt="First slide"
           />
           <Carousel.Caption>
@@ -22,7 +24,7 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://via.placeholder.com/800x400?text=Carousel+Image+2"
+            src={image2}
             alt="Second slide"
           />
 
@@ -34,7 +36,7 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://via.placeholder.com/800x400?text=Carousel+Image+3"
+            src={image3}
             alt="Third slide"
           />
 
@@ -49,7 +51,7 @@ const Home = () => {
       <h1>Vegetable Market Insights</h1>
       <p>Get the latest insights on vegetable markets.</p>
       <Link to="/drop" style={{ textDecoration: "none" }}>
-        <Button>Click Here to get Started Insights</Button>
+        <Button>Click Here to get Start Getting Insights</Button>
       </Link>
     </div>
   );

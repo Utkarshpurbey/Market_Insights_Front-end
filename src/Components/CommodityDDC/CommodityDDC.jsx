@@ -6,6 +6,8 @@ import DropdownSmart from "../Dropdown/DropdownSmart";
 import Featured from "../featured/Featured";
 import "./CommodityDDC.scss"
 import Insights from "../Insights/Insights"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CommodityDDC = () => {
   const [stateName, setStateName] = useState("");
@@ -24,7 +26,31 @@ const CommodityDDC = () => {
     high:0,
     price:0
   });
-  const days_arr= [1,3,5,7,30,90,365];
+  const days_arr= [1,3,5,7,30,180,365];
+  const success = () =>{
+    toast.success('Innsights Generated!', {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  }
+  const error = () =>{
+    toast.error('Internal error', {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  }
 
 
   useEffect(() => {
@@ -63,6 +89,7 @@ const CommodityDDC = () => {
           `${stateName}/${districtName}/${marketName}/${commodityName}/${varietyName}`
       )
       .then((res) => {
+        
         const priceList=res.data.modal_price;
         let priceInd=priceList.length -1;
         if(priceInd>=0){
@@ -73,15 +100,6 @@ const CommodityDDC = () => {
           })
         }
         const newlist = [];
-        // priceList.map((it) => {
-        //   newlist.push({
-        //     id: it.id,
-        //     date: String(it.date).substring(0, 10),
-        //     price: it.price,
-        //     max_price: it.max_price,
-        //     min_price: it.min_price,
-        //   });
-        // });
         priceList.map((it) => {
           newlist.push({
             id: it.id,
@@ -97,8 +115,10 @@ const CommodityDDC = () => {
           trend:newlist
         });
         setViewGraphToggle(true);
+        if(viewGraphToggle){success();}
       })
       .catch((error) => {
+        error();
         console.log(`Error :- ${error}`);
       });
   };
@@ -106,6 +126,18 @@ const CommodityDDC = () => {
     <div className="CommodityDDC">
 
       <h1 className="heading">Choose the appropriate options to get insight of a commodity.</h1>
+      <ToastContainer
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"/>
+
       <DropdownSmart 
         dataType="getStates"
         name=""
