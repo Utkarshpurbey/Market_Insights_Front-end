@@ -14,8 +14,10 @@ const Chart = ({ data, graphName ,aspect}) => {
   useEffect(() => {}, [data, graphName]);
 
   return (
-    <div className='chart'>
-      <div className="title">{data.commodityName}  <span style={{textAlign:"justify",display :"relative",left:"0px" }}>X- axis - Date  Y axis - Price</span></div>
+    <div className='chart'  >
+      <div className="title" style = {{marginBottom:"4%"}}>
+      <p>{data.commodityName} <span  style ={{ float:"right", fontWeight:"600"}}> X- axis - Date <span style={{display:"block"}}> Y- axis - Price </span> </span> </p>
+      </div>
       <p></p>
       <ResponsiveContainer width="100%" aspect={aspect}>
         <LineChart

@@ -25,8 +25,12 @@ const Insights = ({id,days}) =>{
     const current_price = ()=>{
         axios.get(`http://localhost:8080/api/getCommodityById/${id}`).then((res)=>{
             console.log(res)
+            var length = res.data.modal_price.length;
+            console.log(length);
             setCurrprice(res.data.modal_price[res.data.modal_price.length-1].price) 
-            setLastPrice(res.data.modal_price[res.data.modal_price.length-2].price)
+             if(length>1){
+                setLastPrice(res.data.modal_price[res.data.modal_price.length-2].price)
+             }
         }).catch((err)=>{
             console.log(`Error - ${err}`)
         })

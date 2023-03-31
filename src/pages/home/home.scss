@@ -5,3 +5,8 @@ img{
 .body{
   padding: 2%;
 }
+@media (max-width:1025px) {
+  img{
+    height: 30%;
+  }
+}

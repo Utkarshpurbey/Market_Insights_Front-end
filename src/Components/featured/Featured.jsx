@@ -18,20 +18,20 @@ const Featured = ({ insights }) => {
             <div className="itemTitle">Low</div>
             <div className="itemResult negative">
               <KeyboardArrowDown fontSize="small" />
-              <div className="resultAmount">{insights.low}</div>
+              <div className="resultAmount">{insights.low} (₹/100 Kg) </div>
             </div>
           </div>
           <div className="item">
             <div className="itemTitle">Current</div>
             <div className="itemResult">
-              <div className="resultAmount">{insights.price}</div>
+              <div className="resultAmount">{insights.price} (₹/100 Kg) </div>
             </div>
           </div>
           <div className="item">
             <div className="itemTitle">High</div>
             <div className="itemResult positive">
               <KeyboardArrowUpOutlined fontSize="small" />
-              <div className="resultAmount">{insights.high}</div>
+              <div className="resultAmount">{insights.high} (₹/100 Kg) </div>
             </div>
           </div>
         </div>

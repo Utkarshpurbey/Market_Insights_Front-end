@@ -21,11 +21,11 @@ const CustomTooltip = props => {
           <em>{currData ? currData.price : " -- "}</em>
         </p>
         <p>
-          {"Min Price (₹/) : "}
+          {"Min Price (₹/100 Kg) : "}
           <em>{currData ? currData.min_price : " -- "}</em>
         </p>
         <p>
-          {"Max Price (₹) : "}
+          {"Max Price (₹/100 Kg) : "}
           <em>{currData ? currData.max_price : " -- "}</em>
         </p>
       </div>

@@ -26,7 +26,7 @@ const CommodityDDC = () => {
     high:0,
     price:0
   });
-  const days_arr= [1,3,5,7,30,180,365];
+  const days_arr= [1,3,5,7,30,365];
   const success = () =>{
     toast.success('Innsights Generated!', {
       position: "top-right",
