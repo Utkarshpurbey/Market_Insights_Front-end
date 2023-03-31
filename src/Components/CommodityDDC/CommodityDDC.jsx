@@ -198,7 +198,7 @@ const CommodityDDC = () => {
       </Button>
       {(viewGraphToggle===true) ? (
         <div>
-          <Chart data={data} graphName={commodityName} aspect={2/1}/>
+           <Chart data = {data} graphName={commodityName} aspect={2/1}/>
           <Featured insights={insights}/>
           <div className = "insight-body"> {days_arr.map((i)=>{return( <Insights className = "child" id={`${stateName}${districtName}${marketName}${commodityName}${varietyName}`}  days={i}/>);})}</div>
         </div>
