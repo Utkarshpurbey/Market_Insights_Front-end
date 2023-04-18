@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { getAllMenu } from '../../API/apidata'
 import DropdownList from "./DropdownList";
 import axios from "axios";
 import { padding } from "@mui/system";

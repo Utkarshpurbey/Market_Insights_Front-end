@@ -1,17 +1,28 @@
-import {useState } from "react";
+import { Fragment, useEffect,useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Box from "@mui/material/Box";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-
-const DropdownList = ({content,dropdownToParent,header}) => {
-  const [data, setData] = useState("");
-
+import {regionActions} from '../../store/regionSlice'
+import {getDistricts} from '../../store/locationListSlice'
+const DropdownList = ({content,dropdownToParent,header,value}) => {
+  const dispatch = useDispatch();
+  const {states} =useSelector((state) => state.locationList);
+  useEffect(() => {
+    dispatch(getDistricts())
+  }, [dispatch]);
   const handleChange = (event) => {
     event.preventDefault();
-    setData(event.target.value);
-    dropdownToParent(event.target.value);
+    if(states.includes(event.target.value)){
+      dispatch(regionActions.setStateName(event.target.value));  
+      dispatch(getDistricts())
+    }
+    else{
+      dispatch(regionActions.setDistrictName(event.target.value));
+    }
+
   };
 
   return (
@@ -22,7 +33,7 @@ const DropdownList = ({content,dropdownToParent,header}) => {
           <Select
             id="demo-simple-select"
             labelId="inputId"
-            value={data}
+            value={value}
             label= {`Select ${header}`}
             onChange={handleChange}
             style={{color: "gray"}}

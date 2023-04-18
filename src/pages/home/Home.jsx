@@ -1,14 +1,12 @@
 import "./home.scss";
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
-import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
 import image1 from "../../images/image1.jpeg"
 import image2 from "../../images/image2.png"
 import image3 from "../../images/image3.png"
 const Home = () => {
   return (
-    <div class ="body">
+    <div className ="body">
       <Carousel>
         <Carousel.Item>
           <img
@@ -32,11 +30,6 @@ const Home = () => {
           />
         </Carousel.Item>
       </Carousel>
-      <h1>Vegetable Market Insights</h1>
-      <p>Get the latest insights on vegetable markets.</p>
-      <Link to="/drop" style={{ textDecoration: "none" }}>
-        <Button>Click Here to Start Receiving Insights</Button>
-      </Link>
     </div>
   );
 };
