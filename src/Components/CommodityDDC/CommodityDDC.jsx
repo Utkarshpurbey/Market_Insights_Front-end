@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Chart from "../chart/Chart";
 import axios from "axios";
 import { Button } from "@mui/material";
-import DropdownSmart from "../../pages/region/DropdownSmart";
+import DropdownSmart from "../DropDownList/DropdownSmart";
 import Featured from "../featured/Featured";
 import "./CommodityDDC.scss"
 import Insights from "../Insights/Insights"

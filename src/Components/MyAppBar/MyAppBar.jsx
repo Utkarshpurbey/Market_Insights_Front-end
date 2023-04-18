@@ -12,7 +12,7 @@ import WeatherCard from "../weather/Weather";
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
 import DarkModeOutlined from "@mui/icons-material/DarkModeOutlined";
-
+import './MyAppBar.scss'
 export default function MyAppBar() {
   const { dispatch } = useContext(DarkModeContext);
   const pages = ["commodities", "region", "about"];
@@ -58,6 +58,7 @@ export default function MyAppBar() {
               >
                 {pages.map((page) => (
                   <Link
+                  className="items"
                     key={page}
                     onClick={closeMenuToolTip}
                     to={`${page}`}
@@ -65,18 +66,27 @@ export default function MyAppBar() {
                       textDecoration: "none",
                       color: "blue",
                       display: "block",
-                      padding: 4,
+                      paddingLeft: 12,
                     }}
                   >
                     <span>{`${page}`}</span>
                   </Link>
                 ))}
+                <Box className="items">
+
+                <DarkModeOutlined
+                
+                onClick={() => dispatch({ type: "TOGGLE" })}
+                />
+                </Box>
+              <WeatherCard />
               </Menu>
             </Box>
             {/* menu items for laptop devices */}
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Link
+                className="leptopItems"
                   key={page}
                   onClick={closeMenuToolTip}
                   to={`${page}`}
@@ -90,15 +100,17 @@ export default function MyAppBar() {
                   <span>{`${page}`}</span>
                 </Link>
               ))}
-            </Box>
-            <Box>
-              <WeatherCard />
-            </Box>
-            <Box>
+              <Box
+                className="leptopItems"
+              >
+
               <DarkModeOutlined
-                className="icon"
                 onClick={() => dispatch({ type: "TOGGLE" })}
-              />
+                />
+                </Box>
+            </Box>
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              <WeatherCard />
             </Box>
           </Toolbar>
         </Container>

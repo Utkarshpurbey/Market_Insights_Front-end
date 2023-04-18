@@ -9,7 +9,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <Provider store={metaStore}>
-
     <React.StrictMode>
       <DarkModeContextProvider>
         <App />

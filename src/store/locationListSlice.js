@@ -17,6 +17,7 @@ const locationListSlice = createSlice({
             for (let i = 0; i < action.payload.length; i++) {
                 list.push(action.payload[i].state);
             }
+            list.sort()
             state.states=list;
             state.dataLoading = false;
         },
@@ -25,6 +26,7 @@ const locationListSlice = createSlice({
             for (let i = 0; i < action.payload.length; i++) {
                 list.push(action.payload[i].id);
             }
+            list.sort()
             state.districts=list;
         },
         updateMarkets(state, action) {
@@ -32,6 +34,7 @@ const locationListSlice = createSlice({
             for (let i = 0; i < action.payload.length; i++) {
                 list.push(action.payload[i].id);
             }
+            list.sort()
             state.markets=list;
         },
         updateCommodities(state, action) {
@@ -39,6 +42,7 @@ const locationListSlice = createSlice({
             for (let i = 0; i < action.payload.length; i++) {
                 list.push(action.payload[i].id);
             }
+            list.sort()
             state.commodities=list;
         },
         updateVarieties(state, action) {
@@ -46,6 +50,7 @@ const locationListSlice = createSlice({
             for (let i = 0; i < action.payload.length; i++) {
                 state.varieties.push(action.payload[i].id);
             }
+            list.sort()
             state.varieties=list;
         }
 

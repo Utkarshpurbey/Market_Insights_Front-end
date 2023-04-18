@@ -1,0 +1,14 @@
+.items{
+    padding: 8px;
+    :hover{
+        cursor: pointer;
+        background-color: aliceblue;
+    }
+}
+.leptopItems{
+    padding-left: 8px;
+    :hover{
+        cursor: pointer;
+        padding: 5px;
+    }
+}

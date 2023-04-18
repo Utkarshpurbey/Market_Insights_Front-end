@@ -4,8 +4,8 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import IconButton from '@mui/material/IconButton';
-import {useEffect,useState } from "react";
+import IconButton from "@mui/material/IconButton";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getWeatherData } from "../../store/weatherSlice";
 import "./weather.scss";
@@ -62,9 +62,7 @@ const WeatherCard = () => {
     <header className="weather-header">
       {!weather.dataLoading ? (
         <>
-          <Card
-            sx={{  display:'inline-flex'}}
-          >
+          <Card sx={{ display: "inline-flex" }}>
             <CardActions disableSpacing>
               <div>{region}</div>
               <ExpandMore
@@ -78,9 +76,10 @@ const WeatherCard = () => {
             </CardActions>
             <CardContent className="weather">
               <img src={`https:${condition.icon}`} alt={condition.text} />
-              <div className="temperature">{temp_c}°C</div>
-              <div className="description">{condition.text}</div>
-            </CardContent>
+              <div className="tempContainer">
+                <div className="temperature">{temp_c}°C</div>
+                <div className="description">{condition.text}</div>
+              </div>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardContent className="weather-info">
                 <div className="details">
@@ -110,11 +109,13 @@ const WeatherCard = () => {
                     <span className="label">UV Index:</span> {uv}
                   </div>
                   <div className="detail">
-                    <span className="label">Now:</span> {is_day?"Day":"Night"}
+                    <span className="label">Now:</span>{" "}
+                    {is_day ? "Day" : "Night"}
                   </div>
                 </div>
               </CardContent>
             </Collapse>
+            </CardContent>
           </Card>
         </>
       ) : (

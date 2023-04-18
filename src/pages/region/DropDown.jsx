@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import DropdownList from "../../pages/region/DropdownList";
+import DropdownList from "../../Components/DropDownList/DropdownList";
 import { useSelector, useDispatch } from "react-redux";
 import { getStates } from "../../store/locationListSlice";
 import List from '@mui/material/List';
@@ -52,30 +52,25 @@ function DropDown() {
                 <ListItem>
                   <ListItemText
                     primary={localStorage.getItem("stateName")}
-                    // secondary={secondary ? 'Secondary text' : null}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
                     primary={localStorage.getItem("districtName")}
-                    // secondary={secondary ? 'Secondary text' : null}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
                     primary={localStorage.getItem("marketName")}
-                    // secondary={secondary ? 'Secondary text' : null}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
                     primary={localStorage.getItem("commodityName")}
-                    // secondary={secondary ? 'Secondary text' : null}
                   />
                 </ListItem>
                 <ListItemText
                     primary={localStorage.getItem("varietyName")}
-                    // secondary={secondary ? 'Secondary text' : null}
                   />
                 </ListItem>
            </List>

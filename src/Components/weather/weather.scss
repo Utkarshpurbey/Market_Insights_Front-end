@@ -7,32 +7,29 @@
 
   
     .weather {
-      // margin-right: 4px;
-      display: flex;
-      // justify-content: center;
-      justify-self: start;
-      padding: auto;
-  
+      display: flex;  
       img {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
       }
-      .temperature {
-        font-size: 15px;
-        font-weight: bold;
-      }
-  
-      .description {
-        font-size: 12px;
-        margin: 4px;
+      .tempContainer{
+        padding-left: 4px;
+        .temperature {
+          padding-top: 4px;
+          font-size: 15px;
+          font-weight: bold;
+        }
+        
+        .description {
+          font-size: 12px;
+          padding-top: 8px;
+        }
       }
     }
 
   
     .weather-info {
       display: flex;
-      flex-direction: column;
-
   
       .details {
         display: flex;
@@ -53,4 +50,13 @@
       }
     }
   }
+
   
+  
+
+  @media (max-width:900px) {
+    .weather {
+      display: flex;
+      flex-direction: column;
+    }
+  }

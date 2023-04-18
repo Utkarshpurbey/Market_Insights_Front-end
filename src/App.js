@@ -1,17 +1,17 @@
-import Home from "./pages/home/Home";
-import "./style/dark.scss";
 import { useContext } from "react";
-import { DarkModeContext } from "./context/darkModeContext";
-import MyAppBar from './Components/MyAppBar/MyAppBar'
-import ProductList from './pages/commodities/ProductList'
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
 import { Container } from "reactstrap";
+import { DarkModeContext } from "./context/darkModeContext";
+import MyAppBar from './Components/MyAppBar/MyAppBar'
+import Home from "./pages/home/Home";
+import ProductList from './pages/commodities/ProductList'
+import DropDown from './pages/region/DropDown'
 import About from "./pages/about/About";
-import DropDown from './Components/DropDownSelect/DropDown'
+import "./style/dark.scss";
 function App() {
 
   const { darkMode } = useContext(DarkModeContext)
