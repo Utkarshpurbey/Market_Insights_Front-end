@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getCommodityList } from "../../store/commodityListSlice";
 import "./ProductList.scss";
-import MyCardContainer from '../ProductCard/MyCardContainer'
+import MyCardContainer from '../../Components/ProductCard/MyCardContainer'
 const ProductList = () => {
   const dispatch = useDispatch();
   const commodities = useSelector((state) => state.commodityList.commodities);

@@ -23,17 +23,6 @@ const responsive = {
 };
 
 export default function MyCardContainer({ market, productData }) {
-  //   const product = productData.map((item) => (
-  //     <Product
-  //       key={item.commodity}
-  //       commodity={item.commodity}
-  //       variety={item.variety}
-  //       //   url={item.imageurl}
-  //       //   price={item.price}
-  //       //   description={item.description}
-  //     />
-  //   ));
-
   return (
     <div className="App">
       <h3>{market}</h3>
@@ -42,11 +31,9 @@ export default function MyCardContainer({ market, productData }) {
           return (
             <Product
               key={item.commodity}
+              market={market}
               commodity={item.commodity}
               variety={item.variety}
-              //   url={item.imageurl}
-              //   price={item.price}
-              //   description={item.description}
             />
           );
         })}

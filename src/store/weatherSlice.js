@@ -54,7 +54,7 @@ export const getWeatherData = (region) => {
   return async (dispatch) => {
     const getRequest = async () => {
       const response = await fetch(
-        'http://localhost:8080/weather/realtime/'+region);
+        `${process.env.REACT_APP_URL}/weather/realtime?region=${region}`);
 
       if (!response.ok) {
         throw new Error('Getting weather data failed.');

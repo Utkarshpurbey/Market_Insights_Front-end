@@ -3,7 +3,7 @@ import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import MyAppBar from './Components/MyAppBar/MyAppBar'
-import ProductList from './Components/ProductList/ProductList'
+import ProductList from './pages/commodities/ProductList'
 import {
   BrowserRouter,
   Routes,

@@ -56,7 +56,7 @@ export const getStates = () => {
     return async (dispatch) => {
         const getRequest = async () => {
             const response = await fetch(
-                'http://localhost:8080/api/getAllStates');
+                `${process.env.REACT_APP_URL}/api/getAllStates`);
 
             if (!response.ok) {
                 throw new Error('Getting weather data failed.');
@@ -84,7 +84,7 @@ export const getDistricts = () => {
             const stateName=localStorage.getItem('stateName');
             // console.log(stateName)
             const response = await fetch(
-                'http://localhost:8080/api/getDistricts/'+stateName);
+                `${process.env.REACT_APP_URL}/api/getDistricts?state=${stateName}`);
 
             if (!response.ok) {
                 throw new Error(`Getting ${stateName} data failed.`);

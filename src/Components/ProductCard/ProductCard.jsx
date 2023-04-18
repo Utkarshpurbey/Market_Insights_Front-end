@@ -1,4 +1,5 @@
 import {useState} from "react";
+import { useDispatch } from "react-redux";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -6,7 +7,8 @@ import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import IconButton from '@mui/material/IconButton';
-
+import {regionActions} from '../../store/regionSlice'
+import './ProductCard.scss'
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
     return <IconButton {...other} />;
@@ -18,17 +20,24 @@ const ExpandMore = styled((props) => {
     }),
   }));
 export default function Product(props) {
+  const dispatch = useDispatch();
     const [expanded, setExpanded] = useState(false);
 
     const handleExpandClick = () => {
       setExpanded(!expanded);
     };
+    const handleCardClick=()=>{
+      dispatch(regionActions.setMarketName(props.market)); 
+      dispatch(regionActions.setCommodityName(props.commodity)); 
+      dispatch(regionActions.setVarietyName(props.variety)); 
+    }
   return (
     <Card
     sx={{ maxWidth: 345 }}
     className="card"
+    
   >
-    <CardActions disableSpacing>
+    <CardActions disableSpacing >
       <div>{props.commodity}</div>
       <ExpandMore
         expand={expanded}
@@ -39,9 +48,7 @@ export default function Product(props) {
         <ExpandMoreIcon />
       </ExpandMore>
     </CardActions>
-    <CardContent className="product">
-      {/* <img src={`https:${condition.icon}`} alt={condition.text} /> */}
-      {/* <div className="temperature">{props.commodity}</div> */}
+    <CardContent className="product" onClick={handleCardClick}>
       <div className="description">{props.variety}</div>
     </CardContent>
     <Collapse in={expanded} timeout="auto" unmountOnExit>

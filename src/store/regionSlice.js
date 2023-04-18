@@ -20,6 +20,9 @@ const regionSlice = createSlice({
         },
         setDistrictName(state, action) {
             localStorage.setItem('districtName',action.payload)
+            localStorage.removeItem('marketName');
+            localStorage.removeItem('commodityName');
+            localStorage.removeItem('varietyName');
             state.districtName = action.payload
         },
         setMarketName(state, action) {

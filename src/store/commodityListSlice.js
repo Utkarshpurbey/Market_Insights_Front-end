@@ -26,7 +26,7 @@ export const getCommodityList = () => {
             const stateName=localStorage.getItem('stateName');
             const districtName=localStorage.getItem('districtName');
             const response = await fetch(
-                `http://localhost:8080/api/getAllCommodities/${stateName}/${districtName}`);
+                `${process.env.REACT_APP_URL}/api/getAllCommodities?state=${stateName}&district=${districtName}`);
 
             if (!response.ok) {
                 throw new Error('Getting weather data failed.');

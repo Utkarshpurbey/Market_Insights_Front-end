@@ -1,31 +1,17 @@
-.product-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  width: auto;
-
-
+.card {
+  margin:4px;
+  
   .product {
-    // margin-right: 4px;
+    background: rgb(235, 235, 237);
     display: flex;
-    // justify-content: center;
     justify-self: start;
     padding: auto;
+    cursor: pointer;
 
-    img {
-      width: 50px;
-      height: 50px;
-    }
     .description {
       font-size: 15px;
       font-weight: bold;
     }
-
-    // .description {
-    //   font-size: 12px;
-    //   margin: 4px;
-    // }
   }
 
 
