@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
+import UploadFile from "../../Components/uploadFile/UploadFile";
 const style = {
   position: "absolute",
   top: "50%",
@@ -83,6 +84,7 @@ function DropDown() {
           <DropdownList content={districts} header="District" value={districtName}/>
         </Box>
       </Modal>
+      <UploadFile/>
     </div>
   );
 }
