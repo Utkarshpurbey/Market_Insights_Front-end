@@ -2,6 +2,8 @@ import "./ProductCard.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Product from "./ProductCard";
+
+
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 1024 },

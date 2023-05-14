@@ -12,12 +12,11 @@ import ProductList from './pages/commodities/ProductList'
 import DropDown from './pages/region/DropDown'
 import About from "./pages/about/About";
 import "./style/dark.scss";
+import Chart from "./Components/new_chart/Chart";
 function App() {
-
   const { darkMode } = useContext(DarkModeContext)
-
   return (
-    <div className={darkMode ? "app dark" : "app"}>
+      <div className={darkMode ? "app dark" : "app"}>
     <BrowserRouter>
       <Container>
         <MyAppBar/>
@@ -26,10 +25,10 @@ function App() {
                 <Route path = "/commodities" element = {<ProductList />} />
                 <Route path = "/region" element = {<DropDown />} />
                 <Route path = "/about" element = {<About />} />
+                <Route path = '/insight' element = {<Chart/>}></Route>
               </Routes>
       </Container>
     </BrowserRouter>
-     
     </div>
   );
 }

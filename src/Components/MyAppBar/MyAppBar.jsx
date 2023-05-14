@@ -15,7 +15,7 @@ import DarkModeOutlined from "@mui/icons-material/DarkModeOutlined";
 import './MyAppBar.scss'
 export default function MyAppBar() {
   const { dispatch } = useContext(DarkModeContext);
-  const pages = ["commodities", "region", "about"];
+  const pages = ["Commodities", "Region", "About"];
 
   const [menuItems, setmenuItems] = useState(null);
   // function to close and open the tooltip menu

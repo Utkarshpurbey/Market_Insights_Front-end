@@ -12,7 +12,6 @@ const commodityListSlice = createSlice({
             const list =[]
             for (let i = 0; i < action.payload.length; i++) {
                 list.push(action.payload[i]);
-                // console.log(action.payload[i])
             }
             state.commodities=list;
             state.dataLoading = false;
@@ -27,7 +26,6 @@ export const getCommodityList = () => {
             const districtName=localStorage.getItem('districtName');
             const response = await fetch(
                 `${process.env.REACT_APP_URL}/api/getAllCommodities?state=${stateName}&district=${districtName}`);
-
             if (!response.ok) {
                 throw new Error('Getting weather data failed.');
             }
